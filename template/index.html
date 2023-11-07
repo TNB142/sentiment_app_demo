@@ -24,11 +24,22 @@
   <body>
     <div class="login">
       <h1>Predict your sentiment</h1>
-      <form action="{{ url_for('predict')}}"method="post">
-        <input type="text" name="sentence_text" placeholder="Write your sentence" required="required" /><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      <form action="{{ url_for('predict')}}" method="post">
+        <textarea
+          type="text"
+          name="sentence_text"
+          placeholder="Write your sentence"
+          rows="15"
+          cols="35">
+              {{text_clean}}
+          </textarea
+        >
+        <div>
+          <button type="submit" class="btn btn-primary btn-block btn-large">
+            Predict
+          </button>
+        </div>
       </form>
-
     </div>
     {{prediction_text}}
   </body>

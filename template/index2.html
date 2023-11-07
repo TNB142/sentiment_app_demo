@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Spam Classifier</title>
+    <style>
+      body {
+        text-align: center;
+      }
+
+      button {
+        color: aliceblue;
+        background-color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Predict your sentiment</h1>
+    <div>
+      <form action="{{ url_for('predict')}}" method="post">
+        <textarea
+          rows="12"
+          cols="60"
+          name="content"
+          placeholder="Enter your thinking here"
+          autocomplete="off">
+{{ text_input }}</textarea
+        >
+        <div>
+          <button type="submit">Predict</button>
+          <a href="/">Reset</a>
+        </div>
+      </form>
+    </div>
+    <div>
+      <h2 style="color: red">{{prediction_text}}</h2>
+      <!-- <p id="display"></p> -->
+    </div>
+  </body>
+</html>
