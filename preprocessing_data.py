@@ -172,10 +172,7 @@ def clean_data(sentence):
     sentence = re.sub('@[^\s]+','', sentence) #clean user
     sentence = sentence.lower() #low text
     sentence = check_unslang(str(sentence))
-    # doc=nlp(sentence)
-    # sentence=doc._.outcome_spellCheck if doc._.performed_spellCheck else sentence
     sentence = decontracted(sentence)
-    # sentence = spell_check2(str(sentence))
     sentence = re.sub('&[^\s]+;', '', sentence) #xóa html bắt đầu bằng &
     sentence = re.sub('[^a-zA-Za-яА-Я1-9]+', ' ', sentence) #xóa tất cả các lại dấu kí hiệu
     sentence = re.sub(' +',' ', sentence) # xóa câu chữ nhấn nhiều space

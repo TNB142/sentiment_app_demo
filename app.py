@@ -7,7 +7,6 @@ from flask import Flask, request, app, jsonify, url_for, render_template
 from sentence_transformers import SentenceTransformer
 # import re
 from preprocessing_data import *
-from sklearn.feature_extraction.text import CountVectorizer,TfidfTransformer
 
 app = Flask(__name__, template_folder='template')
 
