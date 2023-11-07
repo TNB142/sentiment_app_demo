@@ -4,4 +4,6 @@ pip install numpy
 pip install matplotlib
 pip install -U scikit-learn
 pip install -U sentence-transformers
+pip install --user -U nltk
+pip install pipreqs
 
