@@ -7,6 +7,6 @@ pip install -U scikit-learn
 pip install -U sentence-transformers
 pip install --user -U nltk
 pip install deep-translator
-pip install scipy==1.7.3
+pip install scipy
 pip install pipreqs
 

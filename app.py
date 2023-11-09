@@ -23,11 +23,14 @@ def home():
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     data=request.get_json()['data']
-    data=clean_data(str(data))
-    data_encode=tf_vectorizer.transform([data])
-    output=our_model.predict(data_encode.reshape(1,-1))
+    data_clean=clean_data(str(data))
+    data_encode=tf_vectorizer.transform([data_clean])
+    output=our_model.predict(data_encode.reshape(1,-1)) if data_not_null(data_clean) else [6]
     name_class=class_name(int(output[0]))
-    return jsonify(data,name_class)
+    return jsonify({
+        "0_text_before_clean":data,
+        "1_after_clean":data_clean,
+        "2_class_predict":name_class})
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -35,7 +38,7 @@ def predict():
     data_clean=clean_data(str(data[0]))
     data_encode=tf_vectorizer.transform([data_clean])
     # data_encode=count_vectorizer.transform(data)
-    output=our_model.predict(data_encode.reshape(1,-1))
+    output=our_model.predict(data_encode.reshape(1,-1)) if data_not_null(data_clean) else [6]
     # print(int(output[0]))
     name_class=class_name(int(output[0]))
     return render_template("index2.html",

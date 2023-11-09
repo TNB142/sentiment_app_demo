@@ -151,6 +151,7 @@ def check_unslang(sentence):
           all_words.append(word)
     return " ".join(all_words)
 
+#Lemma_Stemm
 white_tokenizer = WhitespaceTokenizer() #word in space
 snow_stemmer=SnowballStemmer(language='english')
 lemmatizer = WordNetLemmatizer() #wlemmatizer word
@@ -164,6 +165,29 @@ def preprocess_stemmer(sentence):
     text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','', sentence['data_clean']) #clean url
     text = lemmatize_stemming(str(text))
     return text
+
+#Stopwords
+stopwordlist = ['a', 'about', 'above', 'after', 'again', 'ain', 'all', 'am', 'an',
+             'and','any','are', 'as', 'at', 'be', 'because', 'been', 'before',
+             'being', 'below', 'between','both', 'by', 'can', 'd', 'did', 'do',
+             'does', 'doing', 'down', 'during', 'each','few', 'for', 'from',
+             'further', 'had', 'has', 'have', 'having', 'he', 'her', 'here',
+             'hers', 'herself', 'him', 'himself', 'his', 'how', 'i', 'if', 'in',
+             'into','is', 'it', 'its', 'itself', 'just', 'll', 'm', 'ma',
+             'me', 'more', 'most','my', 'myself', 'now', 'o', 'of', 'on', 'once',
+             'only', 'or', 'other', 'our', 'ours','ourselves', 'out', 'own', 're','s', 'same', 'she', "shes", 'should', "shouldve",'so', 'some', 'such',
+             't', 'than', 'that', "thatll", 'the', 'their', 'theirs', 'them',
+             'themselves', 'then', 'there', 'these', 'they', 'this', 'those',
+             'through', 'to', 'too','under', 'until', 'up', 've', 'very', 'was',
+             'we', 'were', 'what', 'when', 'where','which','while', 'who', 'whom',
+             'why', 'will', 'with', 'won', 'y', 'you', "youd","youll", "youre",
+             "youve", 'your', 'yours', 'yourself', 'yourselves']
+STOPWORDS = set(stopwordlist)
+def stop_words_new(sentence):
+    text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','', sentence) #clean url
+    text=" ".join([word for word in str(text).split() if word not in STOPWORDS])
+    return text
+
 #General
 def clean_data(sentence):
     # sentence = MyMemoryTranslator(source='vi-VN', target='en-US').translate(sentence)
@@ -176,9 +200,18 @@ def clean_data(sentence):
     sentence = re.sub('&[^\s]+;', '', sentence) #xóa html bắt đầu bằng &
     sentence = re.sub('[^a-zA-Za-яА-Я1-9]+', ' ', sentence) #xóa tất cả các lại dấu kí hiệu
     sentence = re.sub(' +',' ', sentence) # xóa câu chữ nhấn nhiều space
+    sentence = stop_words_new(sentence)
     # sentence = lemmatize_stemming(str(sentence))
     return sentence
 
+
+#Check data
+def data_not_null(sentence):
+    if sentence != "":
+        flag = 1
+    else:
+        flag=0
+    return flag
 def class_name(res):
     if res == 0:
         res="sadness"
@@ -201,5 +234,8 @@ def class_name(res):
         return res
     if res == 5:
         res="surprise"
+        return res
+    if res == 6:
+        res="neutral"
         return res
     return res
