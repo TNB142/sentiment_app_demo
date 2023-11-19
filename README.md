@@ -1,7 +1,7 @@
 # Sentiment Prediction Demo Application
-Sentiment analysis has emerged as a crucial and captivating machine learning problem in recent years. Numerous methods exist for predicting people's emotions, whether derived from text, facial expressions, or gestures. In this application, a machine learning model was trained on a dataset of tweets and seamlessly integrated into an app. The backend was constructed using Flask, while the frontend was developed with HTML/CSS.
+Sentiment analysis has emerged as a crucial and captivating machine learning problem in recent years. Numerous methods exist for predicting people's emotions, whether derived from text, facial expressions, or gestures. In this application, a machine learning model was trained on a dataset of tweets and seamlessly integrated into an app. The backend was constructed using Flask, while the front end was developed with HTML/CSS.
 
-In detail, an SVM model was trained using the mix_CARER dataset, which is a combination of the CARER dataset and a tweet dataset. The mix_CARER dataset comprises 30,000 texts and labels. Further information, including details on a preprocessing project and a training project, will be provided in the Bonus Section.
+In detail, an SVM model was trained using the mix_CARER dataset, which is a combination of the CARER dataset and a tweet dataset. The mix_CARER dataset comprises 30,000 texts and 6 labels: sad, joy, love, fear, anger and surprise. Further information, including details on a preprocessing project and a training project, will be provided in the Bonus Section.
 
 Despite the model being trained on an English dataset, the application supports the deep-translator package, enabling the translation of other languages into English. However, it's important to note that using this translator may potentially reduce the accuracy of predictions.
 ## Setup Environment
