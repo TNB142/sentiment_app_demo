@@ -28,13 +28,9 @@ pip instal -r requirements.txt
 ```
 ## Features
 ### Home Page Section
-<img src="https://hackmd.io/_uploads/rk2e_iPEa.png" alt="Alt text" title="Home Page Screen">
+<img src="./images/screen_homepage.png" alt="Alt text" title="Home Page Screen">
 
 ### Predict Page Section
 <img src="https://hackmd.io/_uploads/B1vwdswET.png" alt="Alt text" title="Predict Screen">
 
 <img src="https://hackmd.io/_uploads/Hk8_usvNT.png" alt="Alt text" title="Predict Vietnamese Screen">
-
-![screen_vietnamese](https://hackmd.io/_uploads/S1zW2oPV6.png)
-![screen_homepage](https://hackmd.io/_uploads/SkMWniwN6.png)
-![screen_predict](https://hackmd.io/_uploads/ryMZ2jw4a.png)
