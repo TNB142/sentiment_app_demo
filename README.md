@@ -31,6 +31,6 @@ pip instal -r requirements.txt
 <img src="./images/screen_homepage.png" alt="Alt text" title="Home Page Screen">
 
 ### Predict Page Section
-<img src="https://hackmd.io/_uploads/B1vwdswET.png" alt="Alt text" title="Predict Screen">
+<img src="./images/screen_predict.png" alt="Alt text" title="Predict Screen">
 
-<img src="https://hackmd.io/_uploads/Hk8_usvNT.png" alt="Alt text" title="Predict Vietnamese Screen">
+<img src="./images/screen_vietnamese.png" alt="Alt text" title="Predict Vietnamese Screen">
